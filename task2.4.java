@@ -3,9 +3,9 @@ class Wrapper {
         char letter = 'L';
         byte num = 127;
         boolean isSaturday = true;
-        Character l = letter;
-        Byte b = num;
-        Boolean o = isSaturday;
+        Character l = "L";
+        Byte b = 127;
+        Boolean o = true;
 
         if(letter == l && num == b && isSaturday == o) {
             System.out.println(true);
