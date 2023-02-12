@@ -27,12 +27,13 @@ class ITGrades {
         int sumOfGrades = 0;
         int maxGrade = Collections.max(grades);
         int minGrade = Collections.min(grades);
+        int extremeGrades = maxGrade + minGrade;
 
         for (Integer grade: grades) {
             sumOfGrades += grade;
         }
 
-        int sumUp = sumOfGrades - (maxGrade + minGrade);
+        int sumUp = sumOfGrades - extremeGrades;
         int average = sumUp / grades.size();
         System.out.println(average);
     }
