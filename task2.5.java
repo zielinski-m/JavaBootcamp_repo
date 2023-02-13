@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.Collections;
 
 class ITGrades {
     public static void main(String[] args) {
@@ -24,17 +23,27 @@ class ITGrades {
         grades.add(5);
         grades.add(3);
 
-        int sumOfGrades = 0;
-        int maxGrade = Collections.max(grades);
-        int minGrade = Collections.min(grades);
-        int extremeGrades = maxGrade + minGrade;
+    
+        int maxGrade = grades.get(0);
+        int minGrade = grades.get(0);
+        int arrayLenght = grades.size();
+        double sum = 0;
 
-        for (Integer grade: grades) {
-            sumOfGrades += grade;
+        for (int i = 0; i < arrayLenght; i++) {
+            
+            if(grades.get(i) < minGrade) {
+                minGrade = grades.get(i);
+            }
+            if(grades.get(i) > maxGrade) {
+                maxGrade = grades.get(i);
+            }
+            sum = sum + grades.get(i);
         }
 
-        int sumUp = sumOfGrades - extremeGrades;
-        int average = sumUp / grades.size();
+        grades.remove(maxGrade);
+        grades.remove(minGrade);
+        System.out.println(grades.size());
+        double average = sum / arrayLenght;
         System.out.println(average);
-    }
+    }    
 }
